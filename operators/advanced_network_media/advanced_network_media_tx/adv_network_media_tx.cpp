@@ -288,7 +288,7 @@ void AdvNetworkMediaTxOp::initialize() {
   holoscan::Operator::initialize();
 
   if (!pimpl_) {
-    pimpl_ = new AdvNetworkMediaTxOpImpl(*this);
+    pimpl_ = std::make_unique<AdvNetworkMediaTxOpImpl>(*this);
   }
 
   pimpl_->initialize();
